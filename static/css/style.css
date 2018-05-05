@@ -1,0 +1,112 @@
+html, body {
+  margin: 0
+}
+#app {
+  color: #2c3e50;
+  font-family: Avenir,Helvetica,Arial,sans-serif;
+  display: flex
+}
+
+.container {
+  width: 100%;
+  padding: 8px;
+  display: flex;
+}
+
+.card {
+  padding: 8px;
+}
+
+.main {
+  width: 100%;
+  display: flex
+}
+
+.his {
+  margin-left: 8px;
+  min-width: 280px;
+}
+.his .clear {
+  float: right;
+}
+.his h3 {
+  margin: 0px auto;
+  border-bottom: 1px solid #eaecef;
+}
+.his .not-his {
+  font-weight: 400;
+  font-size: 14px;
+  color: #757575;
+}
+
+.his .list {
+  overflow: auto;
+  margin: 5px auto;
+  padding-left: 0
+}
+.his .list li {
+  line-height: 25px;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer
+}
+.his .list li:hover {
+  color: #0091ea
+}
+.his .list .filename {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px
+}
+.his .list .time {
+  padding-top: 2.5px;
+  font-size: 14px;
+  color: #757575;
+  max-width: 115px;
+  width: 100%
+}
+
+.show-info {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #eaecef;
+}
+.show-info h2 {
+  padding: 5px;
+  margin: 0px auto;
+  border-bottom: 1px solid #eaecef;
+  cursor: pointer
+}
+.show-info .image {
+  padding: 10px 0;
+  text-align: center;
+}
+.show-info .image img {
+  max-width: 100%;
+}
+.show-info .url {
+  text-align: center;
+}
+.show-info .url input {
+  padding: 6px 12px;
+  font-size: 14px;
+  width: 300px;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+.up {
+  width: 100%;
+  text-align: center;
+}
+.up .help {
+  text-align: left;
+}
+.up .help h3 {
+  margin-bottom: 0
+}
+.up .help ul {
+  margin-top: 0;
+  padding-left: 25px;
+}

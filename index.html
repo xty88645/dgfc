@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SM.MS图床上传工具</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="shortcut icon" href="/static/img/favicon.png" type="image/png">
+  <script src="/static/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="card main">
+        <div class="up" v-show="!showInfo">
+          <h1>图片拖进来就能上传了</h1>
+          <div class="help">
+            <h3>使用说明</h3>
+            <ul>
+              <li>图片直接拖进窗口即可上传.</li>
+              <li>右键有菜单, 点开历史图片可以使用右键快速复制链接.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="show-info" v-show="showInfo">
+          <h2 @click="showInfo=false">
+            {{ show.filename }}
+          </h2>
+          <div class="image">
+            <img :src="show.url" :title="'上传于: '+timeLocal(show.timestamp)">
+          </div>
+          <div class="url">
+            <input type="text" :value="show.url"
+             onfocus="this.select();" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="card his">
+        <div class="clear">
+          <a href="javascript:;" @click="clear">清除</a>
+        </div>
+          <h3>历史记录</h3>
+        <span v-show="his.length==0" class="not-his">无历史记录</span>
+        <ul class="list">
+          <li v-for="(val,key) in his" :key="key"
+           @click="showInfo=true;show=val" :title="val.filename">
+            <div class="filename">
+              {{ val.filename }}
+            </div>
+            <div class="time">
+              {{ timeLocal(val.timestamp) }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/nw.js" charset="utf-8"></script>
+  <script src="/static/js/main.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "dgfc",
+  "main": "index.html",
+  "window": {
+    "icon": "/static/img/favicon.png",
+    "position": "center",
+    "width": 854,
+    "height": 480
+  }
+}
