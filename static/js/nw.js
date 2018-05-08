@@ -11,6 +11,19 @@ menu.append(new nw.MenuItem({
     clipboard.set(app.show.url, 'text')
   }
 }))
+menu.append(new nw.MenuItem({
+  label: '删除当前图片',
+  click: function(){
+    for (var i = 0; i < app.his.length; i++) {
+      if(app.his[i].delete==app.show.delete) {
+        app.showInfo = false
+        fetch(app.show.delete)
+        app.his.splice(i,1)
+        saveHis()
+      }
+    }
+  }
+}))
 menu.append(new nw.MenuItem({ type: 'separator' }))
 menu.append(new nw.MenuItem({
   label: '退出',
@@ -45,7 +58,7 @@ window.ondrop = (e) => {
     app.his.push(data.data)
     saveHis()
   })
-  .catch(e => this.$message.error(e))
+  .catch(e => alert(e))
 
   return false
 }

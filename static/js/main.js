@@ -27,6 +27,7 @@ var app = new Vue({
       if(confirm("确认要清除历史记录么?")) {
         this.his = []
         saveHis()
+        this.showInfo = false
       }
     }
   }
